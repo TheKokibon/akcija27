@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif; /* Default font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+	
+    background-image: url('pozadina.png');
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 10rem; /* Super big numbers */
+    color: red;
+    margin: 0;
+  }
+  
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-top: 2rem; /* Slight spacing from h1 */
+	color: #ffffff;
+	animation: pulse 4s infinite;
+  }
+  
+  /* Pulse Animation */
+  @keyframes pulse {      
+	0%,
+	100% {
+        opacity: 1;        
+		/*transform: scale(1);*/
+		color: red;
+		}      
+	50% {
+        opacity: 1;
+		/*transform: scale(1.1);*/
+		color: #ffffff;
+		}    
+	}
+  
+  .container {
+    text-align: center;
+  }
+
+  #countdown {
+    font-family: 'Roboto', sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+    margin-top: 0rem;
+    color: white;
+  }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>27. 1. 2025.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>27.1.</h1>
+    <div id="countdown">00:00:00</div>
+    <h2>ВИДИМО СЕ</h2>
+    </div>
+  
+    <script>
+        // Set the target date and time (27th at 7:00 AM)
+        const targetDate = new Date();
+        targetDate.setDate(27); // Set to the 27th of the current month
+        targetDate.setHours(7, 0, 0, 0); // Set time to 7:00 AM
+    
+        // Handle crossing the month boundary
+        if (targetDate < new Date()) {
+          targetDate.setMonth(targetDate.getMonth() + 1); // Move to next month if the date has passed
+        }
+    
+        // Countdown function
+        function updateCountdown() {
+          const now = new Date();
+          const timeDifference = targetDate - now;
+    
+          // Calculate total hours, minutes, and seconds remaining
+          const totalHours = Math.floor(timeDifference / (1000 * 60 * 60));
+          const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    
+          // Display the countdown as "Hours:Minutes:Seconds"
+          document.getElementById("countdown").textContent = `${totalHours}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    
+          // Stop the countdown when the time is up
+          if (timeDifference < 0) {
+            clearInterval(interval);
+            document.getElementById("countdown").textContent = "0:00:00";
+          }
+        }
+    
+        // Update the countdown every second
+        const interval = setInterval(updateCountdown, 1000);
+      </script>
+  </div>
+</body>
+</html>
